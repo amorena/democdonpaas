@@ -1,31 +1,38 @@
 DEMO DevOps-Continuous Delivery on PaaS
 ----------------------------------------
 
-the goal of this demo is to demonstrate how implementing continuous delivery practices with OpenShift Enterprise is easy to achieve:
+the goal of this demo is to demonstrate how implementing continuous delivery practices with OpenShift Enterprise you can easly achieve:
 
-    Deploy seamlessly from Development, QA, UAT and Production environments
-    Automates testing and provisioning processes
-    Allows developers, QA and release teams to collaborate reducing risks
-    Create ose environments and deploy apps on demand
+- Deploy seamlessly from Development, QA, UAT and Production environments
+- Automates testing and provisioning processes
+- Allows developers, QA and release teams to collaborate reducing risks
+- Create ose environments and deploy apps on demand
 
 Openshift - PaaS value added to CD and DevOps
 -------------------------------------------------
 
-    standardize envs creation and configuration
-    automate env provisioning and deployment
-    easly create and destroy platform and applications combination (no need to schedule time for specific build or branches)
-    minimize errors during build pipeline
+- standardize envs creation and configuration
+- automate env provisioning and deployment
+- easly create and destroy platform and applications combination (no need to schedule time for specific build or branches)
+- minimize errors during build pipeline
 
 DEMO environment
 ------------------
 
-1 simple "Hello World" application (Tomcat cartridge)
+1 simple "Hello World" application (Tomcat cartridge) - cdonpaas.zip
+
 3 Jenkins users: developer, tester and release - 1 email inbox for dev/tester/release
+
 1 Enterprise source code (SCM) (GITLAB - GITHUB). This project is based on a local GIT Server.
+
 1 Enterprise Artifact repository (Nexus). This project is based on a local MAVEN.
+
 1 VM for Openshift environments. I've used the standard VM avalable from the customer portal.
+
 1 Jenkins Server (external to Openshift)
+
 4 Build pipeline Stages / OSE envs = Dev (Commit stage); QA (Acceptance stage); UAT (UAT stage); Prod (Prod stage)
+
 
 Demo Stages (Jenkins jobs)
 ----------------------------

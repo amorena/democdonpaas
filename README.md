@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/amorena/democdonpaas/master/demo.png)
+
 DEMO DevOps-Continuous Delivery on PaaS
 ----------------------------------------
 

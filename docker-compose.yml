@@ -1,0 +1,31 @@
+jenkins:
+  image: amorena/jenkins:8.5
+  links:
+    - dovecot:rhsummit.org 
+    - sonar:sonar 
+    - nexus:nexus
+  ports:
+    - "127.0.0.1:8082:8082" 
+  volumes:
+    - /democdonpaas/ticketmonster-openshift:/democdonpaas/ticketmonster-openshift
+sonar:
+  image: amorena/sonar:latest
+  restart: always
+  ports:
+    - "127.0.0.1:9000:9000" 
+nexus:
+  image: amorena/nexus:latest
+  ports:
+    - "127.0.0.1:8081:8081" 
+rainloop:
+  image: amorena/rainloop:latest
+  links:
+    - dovecot:rhsummit.org 
+  ports:
+    - "127.0.0.1:33100:80" 
+dovecot:
+  image: amorena/dovecot:latest
+  ports:
+    - "127.0.0.1:25:25" 
+    - "127.0.0.1:587:587" 
+    - "127.0.0.1:143:143" 

@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+#!/bin/sh
+appname="ticketmonster"
+giturl=/tmpgit/ticketmonster-openshift/.git
+cause="Triggered+by+Git+Hook"
+
+# Build jenkins URL
+
+jenkinsJob="http://developer:developer@127.0.0.1:8082/jenkins/job/ticket-monster-build"
+buildPath="/build?token=ticketmonster"
+echo "Notifying Jenkins of new push updates."
+curl -v "${jenkinsJob}${buildPath}"
+
+#Final step
+exec git update-server-info

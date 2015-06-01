@@ -32,39 +32,39 @@ This demo uses the following components to create the delivery pipeline:
 **3 Jenkins users / emails inbox: developer, tester and release**  
 
 **Dovecot**  
-Description: imap server
-Address:	"127.0.0.1:25:25"
-	 	"127.0.0.1:587:587"
-		"127.0.0.1:143:143"
+Description: imap server  
+Address:	"127.0.0.1:25:25"  
+	 	"127.0.0.1:587:587"  
+		"127.0.0.1:143:143"  
 
 **Rainloop**  
-Description: Webmail 
-Address: http://webmail:33100
+Description: Webmail   
+Address: http://webmail:33100  
 		. user:jenkins@rhsummit.org / jenkins123
 		. user:developer@rhsummit.org / developer123
 		. user:tester@rhsummit.org / tester123
 		. user:release@rhsummit.org / release123
-http://webmail:33100/?admin (ADMIN page)
+http://webmail:33100/?admin (ADMIN page)  
 		. user: admin / 12345
 
 **Jenkins**  
-Description: continuous delivery orchestration engine and Git Server
-Address: http://jenkins:8082/jenkins
+Description: continuous delivery orchestration engine and Git Server  
+Address: http://jenkins:8082/jenkins  
 
 **Git (hosted on the jenkins container)**  
-Description: source repository hosting the ticket-monster Java application
-Address: ssh://git@127.0.0.1:2200/tmpgit/ticketmonster.git
+Description: source repository hosting the ticket-monster Java application  
+Address: ssh://git@127.0.0.1:2200/tmpgit/ticketmonster.git  
 
 **Sonatype Nexus**  
-Description: artifact repository for archiving release binaries
-Address: http://nexus:8081/nexus
+Description: artifact repository for archiving release binaries  
+Address: http://nexus:8081/nexus  
 
 **SonarQube**  
-Description: static code analysis engine extracting various quality metrics from the code
-Address: http://sonar:9000
+Description: static code analysis engine extracting various quality metrics from the code  
+Address: http://sonar:9000  
 
 **1 VM for Openshift environments (PROD env)**  
-I've used the standard VM available from the customer portal
+I've used the standard VM available from the customer portal  
 
 Note: if running _boot2docker_ on Mac OSX, _DOCKER_HOST_ is the ip of boot2docker virtual machine. 
 

@@ -33,21 +33,18 @@ This demo uses the following components to create the delivery pipeline:
 
 **Dovecot**  
 Description: imap server  
-Address:	
-"127.0.0.1:25:25"
-"127.0.0.1:587:587"
-"127.0.0.1:143:143"  
+Address: "127.0.0.1:25:25" "127.0.0.1:587:587" "127.0.0.1:143:143"  
 
 **Rainloop**  
 Description: Webmail   
 Address:   
 http://webmail:33100  
-. user:jenkins@rhsummit.org / jenkins123
-. user:developer@rhsummit.org / developer123
-. user:tester@rhsummit.org / tester123
-. user:release@rhsummit.org / release123
+. user:jenkins@rhsummit.org / jenkins123  
+. user:developer@rhsummit.org / developer123  
+. user:tester@rhsummit.org / tester123  
+. user:release@rhsummit.org / release123  
 http://webmail:33100/?admin (ADMIN page)  
-. user: admin / 12345
+. user: admin / 12345  
 
 **Jenkins**  
 Description: continuous delivery orchestration engine and Git Server  

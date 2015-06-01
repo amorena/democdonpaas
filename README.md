@@ -27,17 +27,17 @@ DEMO environment
 
 This demo uses the following components to create the delivery pipeline:
 
-**"Ticket Monster" J2EE Application (JBoss EAP)**
+**"Ticket Monster" J2EE Application (JBoss EAP)**  
 
-**3 Jenkins users / emails inbox: developer, tester and release**
+**3 Jenkins users / emails inbox: developer, tester and release**  
 
-**Dovecot**
+**Dovecot**  
 Description: imap server
 Address:	"127.0.0.1:25:25"
 	 	"127.0.0.1:587:587"
 		"127.0.0.1:143:143"
 
-**Rainloop**
+**Rainloop**  
 Description: Webmail 
 Address: http://webmail:33100
 		. user:jenkins@rhsummit.org / jenkins123
@@ -47,23 +47,23 @@ Address: http://webmail:33100
 http://webmail:33100/?admin (ADMIN page)
 		. user: admin / 12345
 
-**Jenkins**
+**Jenkins**  
 Description: continuous delivery orchestration engine and Git Server
 Address: http://jenkins:8082/jenkins
 
-**Git (hosted on the jenkins container)**
+**Git (hosted on the jenkins container)**  
 Description: source repository hosting the ticket-monster Java application
 Address: ssh://git@127.0.0.1:2200/tmpgit/ticketmonster.git
 
-**Sonatype Nexus**
+**Sonatype Nexus**  
 Description: artifact repository for archiving release binaries
 Address: http://nexus:8081/nexus
 
-**SonarQube**
+**SonarQube**  
 Description: static code analysis engine extracting various quality metrics from the code
 Address: http://sonar:9000
 
-**1 VM for Openshift environments (PROD env)**
+**1 VM for Openshift environments (PROD env)**  
 I've used the standard VM available from the customer portal
 
 Note: if running _boot2docker_ on Mac OSX, _DOCKER_HOST_ is the ip of boot2docker virtual machine. 
@@ -138,7 +138,7 @@ Demo Flow
 - Release user can select any build in UAT and do a "push button" deployment to PROD (Production)
 
 ## Recognitions
-I have improved my first version of this demo on the basis of some configurations done by my collegue Siamak Sadeghianfar in another demo and who wrote the OpenShift Jenkins plugin. Furthermore thanks to Arun Gupta who has reviewed my initial work and provided useful inputs as well as Giuseppe Bonocore who has improved even further the Openshift Jenkins plugin.
+I have improved my first version of this demo on the basis of a similar demo done afterwards by my collegue Siamak Sadeghianfar (who wrote the OpenShift Jenkins plugin). Furthermore thanks to Arun Gupta who has reviewed my initial work and provided useful inputs as well as Giuseppe Bonocore who has improved even further the Openshift Jenkins plugin.
 
 
 

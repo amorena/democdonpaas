@@ -47,7 +47,7 @@ http://webmail:33100/?admin (ADMIN page)
 . user: admin / 12345  
 
 **Jenkins**  
-Description: continuous delivery orchestration engine and Git Server  
+Description: continuous delivery orchestration engine  
 Address: http://jenkins:8082/jenkins  
 
 **Git (hosted on the jenkins container)**  

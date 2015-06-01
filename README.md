@@ -23,7 +23,7 @@ Openshift - PaaS value added to CD and DevOps
 - minimize errors during build pipeline
 
 DEMO environment
-======
+-------------------------------------------------
 
 This demo uses the following components to create the delivery pipeline:
 
@@ -44,7 +44,7 @@ Address: http://webmail:33100
 		. user:developer@rhsummit.org / developer123
 		. user:tester@rhsummit.org / tester123
 		. user:release@rhsummit.org / release123
-. http://webmail:33100/?admin (ADMIN page)
+http://webmail:33100/?admin (ADMIN page)
 		. user: admin / 12345
 
 **Jenkins**
@@ -63,7 +63,8 @@ Address: http://nexus:8081/nexus
 Description: static code analysis engine extracting various quality metrics from the code
 Address: http://sonar:9000
 
-**1 VM for Openshift environments (PROD env). I've used the standard VM available from the customer portal**
+**1 VM for Openshift environments (PROD env)**
+I've used the standard VM available from the customer portal
 
 Note: if running _boot2docker_ on Mac OSX, _DOCKER_HOST_ is the ip of boot2docker virtual machine. 
 

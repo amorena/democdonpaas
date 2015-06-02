@@ -69,13 +69,14 @@ Note: if running _boot2docker_ on Mac OSX, _DOCKER_HOST_ is the ip of boot2docke
 
 Delivery Pipeline
 =================
-The delivery pipeline in this demo is divided into five phases each containing a number of activities (jobs) that need to succeed in order to promote the artefact to the next phase. Each change in the application is a potential production release according to Continuous Delivery principles and can go in production if it successfully passes through all the phases in the pipeline.
+The delivery pipeline in this demo is divided into six phases each containing a number of activities (jobs) that need to succeed in order to promote the artefact to the next phase. Each change in the application is a potential production release according to Continuous Delivery principles and can go in production if it successfully passes through all the phases in the pipeline.
 
-1. BUILD: compilation and unit test, integration tests and static code analysis
-2. DEV: release to Nexus, create release tag in Git, deploy to DEV server (on OpenShift online) and running functional tests
-3. QA: deploy to System Test server (on OpenShift online) and running system tests
-4. UAT: deploy to Performance Test server (on OpenShift online) and running performance tests
-5. PROD: deploy to Production server (on OpenShift Enterprise)
+1. BUILD: automatic compilation and integration tests, release snapshot ver to Nexus and static code analysis. Send an email to Developer.
+2. DEV:   automatic deploy to DEV server on PaaS (on OpenShift online) and running tests, create release tag in GIT. Send an email to Tester.
+3. DEV Teardown: automatic destroy of TicketmonsterVerSNAPSHOT env (app+platform)
+4. QA: Tester user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to QA server on PaaS (on OpenShift online) and runs tests
+5. UAT: automatic deploy of the same binary to UAT server on PaaS (on OpenShift online) and runs tests. Send an email to Release user.
+6. PROD: Release user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to PROD server on PaaS (locally on OpenShift Enterprise) and runs tests
 
 ![Delivery Pipeline](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/delivery-pipeline.png)
 

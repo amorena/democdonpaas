@@ -74,8 +74,8 @@ The delivery pipeline in this demo is divided into six phases each containing a 
 1. BUILD: automatic compilation and integration tests, release snapshot ver to Nexus and static code analysis. Send an email to Developer.
 2. DEV:   automatic deploy to DEV server on PaaS (on OpenShift online) and running tests, create release tag in GIT. Send an email to Tester.
 3. DEV Teardown: automatic destroy of TicketmonsterVerSNAPSHOT env (app+platform)
-4. QA: Tester user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to QA server on PaaS (on OpenShift online) and runs tests
-5. UAT: automatic deploy of the same binary to UAT server on PaaS (on OpenShift online) and runs tests. Send an email to Release user.
+4. QA TEST: Tester user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to QA server on PaaS (on OpenShift online) and runs tests
+5. UAT TEST: automatic deploy of the same binary to UAT server on PaaS (on OpenShift online) and runs tests. Send an email to Release user.
 6. PROD: Release user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to PROD server on PaaS (locally on OpenShift Enterprise) and runs tests
 
 ![Delivery Pipeline](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/delivery-pipeline.png)
@@ -90,14 +90,16 @@ Instructions
    git clone https://github.com/amorena/democdonpaas.git
    ```
 
-3. Steps required ONLY if you wanna use OSE 2.x Virtual Machine (like I do at the moment)
-	. DNS nameserver of the virtual machine needs to be configured in Jenkins (or local machine). Edit your local file `/etc/resolv.conf` 		  and add `nameserver 192.168.122.51` as the first nameserver (Optional: change attribute so that the file is immutable during the 		  demo)
-	. Bound Docker containers network from "docker0" to "virbr0" (same network interface used by the VM). 
-	  Edit /etc/sysconfig/docker-network.
-	. Optional: Set docker containers IP range using "democdonpass/scripts/docker-setup-bridge.sh" (e.g: 192.168.122.2/24)
+3. Steps required ONLY if you wanna use OSE 2.x Virtual Machine (like I do at the moment)  
+	. DNS nameserver of the virtual machine needs to be configured in Jenkins (or local machine)  
+		. Edit your local file `/etc/resolv.conf`and add `nameserver 192.168.122.51` as the first nameserver   
+		  (Optional: change attribute so that the file is immutable during the demo)  
+	. Bound Docker containers network from "docker0" to "virbr0" (same network interface used by the VM)   
+	  Edit /etc/sysconfig/docker-network.  
+	. Optional: Set docker containers IP range using "democdonpass/scripts/docker-setup-bridge.sh" (e.g: 192.168.122.2/24)  
 
-4. Local Host configuration for the Browser names resolution
-	. Edit your local file `/etc/hosts` and add `127.0.0.1 jenkins nexus sonar rhsummit.org webmail` 
+4. Local Host configuration for the Browser names resolution  
+	. Edit your local file `/etc/hosts` and add `127.0.0.1 jenkins nexus sonar rhsummit.org webmail`   
 	
 5. Start the containers
    ```

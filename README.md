@@ -92,10 +92,8 @@ Instructions
 
 3. Steps required ONLY if you wanna use OSE 2.x Virtual Machine (like I do at the moment)  
 	. DNS nameserver of the virtual machine needs to be configured in Jenkins (or local machine)  
-		. Edit your local file `/etc/resolv.conf`and add `nameserver 192.168.122.51` as the first nameserver   
-		  (Optional: change attribute so that the file is immutable during the demo)  
-	. Bound Docker containers network from "docker0" to "virbr0" (same network interface used by the VM)   
-	  Edit /etc/sysconfig/docker-network.  
+		. Edit your local file `/etc/resolv.conf`and add `nameserver 192.168.122.51` as the first nameserver (Optional: change attribute so that the file is immutable during the demo)    
+	. Bound Docker containers network from "docker0" to "virbr0" (same network interface used by the VM).Edit /etc/sysconfig/docker-network.  
 	. Optional: Set docker containers IP range using "democdonpass/scripts/docker-setup-bridge.sh" (e.g: 192.168.122.2/24)  
 
 4. Local Host configuration for the Browser names resolution  

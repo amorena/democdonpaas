@@ -10,7 +10,7 @@ The goal of this demo is to demonstrate how implementing continuous delivery pra
 - Allows developers, QA and release teams to collaborate during the process reducing risks
 - Automate create, deploy and destroy of complete environments (platform + application) on demand. Maximize usage of resources. 
 
-![](https://raw.githubusercontent.com/amorena/democdonpaas/master/demo.png)
+![](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/demo.png)
 
 This demo uses docker-compose as a simple orchestration tool to start the Docker containers required for this demo. Docker is used for simplicity in this demo but is not essential to the delivery pipeline.
 
@@ -77,7 +77,7 @@ The delivery pipeline in this demo is divided into five phases each containing a
 4. UAT: deploy to Performance Test server (on OpenShift online) and running performance tests
 5. PROD: deploy to Production server (on OpenShift Enterprise)
 
-![Delivery Pipeline](https://raw.githubusercontent.com/jbossdemocentral/continuous-delivery-demo/master/images/delivery-pipeline.png)
+![Delivery Pipeline](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/delivery-pipeline.png)
 
 Instructions
 ============
@@ -107,7 +107,7 @@ Instructions
 
 6. Browse to http://DOCKER_HOST:8082/jenkins and go to _Manage Jenkins > Configure System_. Scroll down to _OpenShift_ section and enter your OpenShift configs. If using OpenShift Online, enter your username and password in the respective textboxes. If using OpenShift Enterprise, also enter the address to your broker. Click on "Check Login" to validate your username and password. If successfull, click on "Upload SSH Public Key" to upload the Jenkins SSH keys to OpenShift.
 
-  ![Jenkins Config](https://raw.githubusercontent.com/jbossdemocentral/continuous-delivery-demo/master/images/jenkins-config.png)
+  ![Jenkins Config](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/jenkins-config.png)
 
 7. How to start the flow:
 	1. Go to jobs list and start the _ticket-monster-build_ job.

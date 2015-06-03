@@ -115,23 +115,10 @@ Instructions
 	2. _git push_
 	3. From JBoss developer studio - _Commit-Push_
 
-8. Login into Jenkins console using developer, tester and release and Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
-
--------------------------------------------------------------------------------------------------------------------------------------------
-
-Demo Flow
---------------------------
-
-- Developer can check code in ("push" eg: from CLI or JDS) and this will trigger an automatic compilation and unit test (Commit)
-- eg: Developer checks in code that breaks compilation and team gets notification build is broken
-- Developer fix the issue and code that passes the Commit stage will automatically trigger a deployment to QA (Acceptance)
-- Deployments to QA automatically trigger one or more functional acceptance or integration tests
-- Code that passes the Acceptance stage will automatically notify the user tester
-- Tester user can select any build that passes Acceptance and do a "push button" deployment to UAT (UAT stage)
-- Release user can select any build in UAT and do a "push button" deployment to PROD (Production)
+8. Login into Jenkins console using developer, tester and release users and Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
 
 ## Recognitions
-I have improved my first version of this demo on the basis of a similar demo done afterwards by my collegue Siamak Sadeghianfar (who wrote the OpenShift Jenkins plugin). Furthermore thanks to Arun Gupta who has reviewed my initial work and provided useful inputs as well as Giuseppe Bonocore who has improved even further the Openshift Jenkins plugin.
+I have improved my first version of this demo on the basis of a similar demo done afterwards by Siamak Sadeghianfar (who wrote the OpenShift Jenkins plugin). Furthermore thanks to Arun Gupta who has reviewed my initial work and provided some suggestions as well as Giuseppe Bonocore who has improved even further the Openshift Jenkins plugin.
 
 
 

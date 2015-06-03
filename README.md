@@ -110,11 +110,12 @@ Instructions
 
   ![Jenkins Config](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/jenkins-config.png)
 
-7. How to start the flow:
+7. You can start the flow in 3 ways:
 	1. Go to jobs list and start the _ticket-monster-build_ job.
 	2. _git push_
 	3. From JBoss developer studio - _Commit-Push_
-8. Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
+
+8. Login into Jenkins console using developer, tester and release and Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 

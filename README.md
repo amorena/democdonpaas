@@ -3,7 +3,7 @@
 DEMO DevOps-Continuous Delivery on PaaS
 ----------------------------------------
 
-The goal of this demo is to demonstrate how implementing continuous delivery practices using OpenShift Enterprise you can easly achieve:
+The goal of this demo is to demonstrate how implementing continuous delivery practices using OpenShift - PaaS you can easly achieve:
 
 - Moves forward artifacts in the delivery pipeline from Development, QA, UAT and Production environments
 - Automates testing and provisioning processes

@@ -72,11 +72,11 @@ Delivery Pipeline
 The delivery pipeline in this demo is divided into six phases each containing a number of activities (jobs) that need to succeed in order to promote the artefact to the next phase. Each change in the application is a potential production release according to Continuous Delivery principles and can go in production if it successfully passes through all the phases in the pipeline.
 
 1. BUILD: automatic compilation and integration tests, release snapshot ver to Nexus and static code analysis. Send an email to Developer.
-2. DEV:   automatic deploy to DEV server on PaaS (on OpenShift online) and running tests, create release tag in GIT. Send an email to Tester.
+2. DEV:   automatic deploy to DEV server on PaaS (on OpenShift online) and runs tests, create release tag in GIT. Send an email to Tester.
 3. DEV Teardown: automatic destroy of TicketmonsterVerSNAPSHOT env (app+platform)
-4. QA TEST: Tester user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to QA server on PaaS (on OpenShift online) and runs tests
+4. QA TEST: Tester user can do "push button" deploy (from Jenkins console - DeliveryPipeline tab) of the same binary to QA server on PaaS (on OpenShift online). Automatic tests.
 5. UAT TEST: automatic deploy of the same binary to UAT server on PaaS (on OpenShift online) and runs tests. Send an email to Release user.
-6. PROD: Release user can push the button (from Jenkins console - DeliveryPipeline tab) to deploy the same binary to PROD server on PaaS (locally on OpenShift Enterprise) and runs tests
+6. PROD: Release user can do "push button" deploy (from Jenkins console - DeliveryPipeline tab) of the same binary to PROD server on PaaS (locally on OpenShift Enterprise). Automatic tests.
 
 ![Delivery Pipeline](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/delivery-pipeline.png)
 
@@ -111,21 +111,13 @@ Instructions
   ![Jenkins Config](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/jenkins-config.png)
 
 7. You can start the flow in 3 ways:
-	1. Go to jobs list and start the _ticket-monster-build_ job.
+	1. From the Jenkins console logged in as developer user go to jobs list and start the _ticket-monster-build_ job.
 	2. _git push_
 	3. From JBoss developer studio - _Commit-Push_
 
 8. Login into Jenkins console using developer, tester and release and Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-
-Demo Stages (Jenkins jobs)
-----------------------------
-
-- Commit (owner developer): maven build + unit test + deploy/create to "dev" ose environment + email
-- Acceptance (owner developer - automatically triggered by the Commit stage): deploy/create to "amqa" ose environment + Integration test ("hello" service) + email
-- UAT (owner tester - manually trigger by the user): deploy/create to "uat" ose environment + integration test ("Home Page") + email
-- Prod (owner release - manually trigger by the user): deploy/create to "prod" ose environment + email
 
 Demo Flow
 --------------------------

@@ -104,8 +104,8 @@ Instructions
    cd democdonpaas
    docker-compose up -d
    ```
-   This step will download the required Docker images from Docker registery and start all containers: Jenkins, Nexus, Sonar, Dovecot and  
-   Rainloop. Depending on your internet connection, it might take some minutes.
+   This step will download the required Docker images from Docker registery and start all containers: Jenkins, Nexus, Sonar, Dovecot and Rainloop.  
+Depending on your internet connection, it might take some minutes.
 
 6. Login (using jenkins user) to http://jenkins:8082/jenkins and go to _Manage Jenkins > Configure System_. Scroll down to _OpenShift_ section and enter your OpenShift configs. If using OpenShift Online, enter your username and password in the respective textboxes. If using OpenShift Enterprise, also enter the address to your broker. Click on "Check Login" to validate your username and password. If successfull, click on "Upload SSH Public Key" to upload the Jenkins SSH keys to OpenShift.  
 NOTE: in this demo I've configured and rely on an hybrid configuration (Openshift online + local VM with OSE v2) 

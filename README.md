@@ -50,7 +50,7 @@ http://webmail:33100/?admin (ADMIN page)
 Description: continuous delivery orchestration engine  
 Address: http://jenkins:8082/jenkins  
 
-**Git (hosted on the jenkins container)**  
+**Git Server (hosted on the jenkins container)**  
 Description: source repository hosting the ticket-monster Java application  
 Address: ssh://git@127.0.0.1:2200/tmpgit/ticketmonster.git  
 
@@ -90,7 +90,7 @@ Instructions
    git clone https://github.com/amorena/democdonpaas.git
    ```
 
-3. Steps required ONLY if you wanna use OSE 2.x Virtual Machine (like I do at the moment)  
+3. This step is required ONLY if you wanna use "Openshift online" + Openshift enterprise 2.x Virtual Machine (current configuration)  
 	. DNS nameserver of the virtual machine needs to be configured in Jenkins (or local machine)  
 		. Edit your local file `/etc/resolv.conf`and add `nameserver 192.168.122.51` as the first nameserver (Optional: change attribute so that the file is immutable during the demo)    
 	. Bound Docker containers network from "docker0" to "virbr0" (same network interface used by the VM).Edit /etc/sysconfig/docker-network.  
@@ -104,16 +104,18 @@ Instructions
    cd democdonpaas
    docker-compose up -d
    ```
-   This step will download the required Docker images from Docker registery and start all componenets: Jenkins, Nexus, Sonar, devoct and rainloop containers. Depending on your internet connection, it might take some minutes.
+   This step will download the required Docker images from Docker registery and start all containers: Jenkins, Nexus, Sonar, Dovecot and  
+   Rainloop. Depending on your internet connection, it might take some minutes.
 
-6. Browse to http://DOCKER_HOST:8082/jenkins and go to _Manage Jenkins > Configure System_. Scroll down to _OpenShift_ section and enter your OpenShift configs. If using OpenShift Online, enter your username and password in the respective textboxes. If using OpenShift Enterprise, also enter the address to your broker. Click on "Check Login" to validate your username and password. If successfull, click on "Upload SSH Public Key" to upload the Jenkins SSH keys to OpenShift.
+6. Login (using jenkins user) to http://jenkins:8082/jenkins and go to _Manage Jenkins > Configure System_. Scroll down to _OpenShift_ section and enter your OpenShift configs. If using OpenShift Online, enter your username and password in the respective textboxes. If using OpenShift Enterprise, also enter the address to your broker. Click on "Check Login" to validate your username and password. If successfull, click on "Upload SSH Public Key" to upload the Jenkins SSH keys to OpenShift.  
+NOTE: in this demo I've configured and rely on an hybrid configuration (Openshift online + local VM with OSE v2) 
 
   ![Jenkins Config](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/jenkins-config.png)
 
 7. You can start the flow in 3 ways:
 	1. From the Jenkins console logged in as developer user go to jobs list and start the _ticket-monster-build_ job.
-	2. _git push_
-	3. From JBoss developer studio - _Commit-Push_
+	2. _git push_ (remember to git pull first from the git server on jenkins docker container)
+	3. From JBoss developer studio - _Commit-Push_ (remember to git pull first from the git server on jenkins docker container)
 
 8. Login into Jenkins console using developer, tester and release users and Go to the _Delivery Pipeline_ tab to see how the build progresses in the delivery pipeline.
 

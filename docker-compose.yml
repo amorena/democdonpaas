@@ -1,5 +1,5 @@
 jenkins:
-  image: amorena/jenkins:10.4
+  image: amorena/jenkins:10.5
   links:
     - dovecot:rhsummit.org 
     - sonar:sonar 

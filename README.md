@@ -72,11 +72,11 @@ Delivery Pipeline
 The delivery pipeline in this demo is divided into six phases each containing a number of activities (jobs) that need to succeed in order to promote the artefact to the next phase. Each change in the application is a potential production release according to Continuous Delivery principles and can go in production if it successfully passes through all the phases in the pipeline.
 
 1. BUILD: automatic compilation and integration tests, release snapshot ver to Nexus and static code analysis. Send an email to Developer.
-2. DEV:   automatic deploy to DEV server on PaaS (on OpenShift online) and runs tests, create release tag in GIT. Send an email to Tester.
+2. DEV:   automatic deploy to DEV server on PaaS (on OpenShift online) and runs tests, create release tag in GIT. Send an email to Developer.
 3. DEV Teardown: automatic destroy of TicketmonsterVerSNAPSHOT env (app+platform)
-4. QA TEST: Tester user can do "push button" deploy (from Jenkins console - DeliveryPipeline tab) of the same binary to QA server on PaaS (on OpenShift online). Automatic tests.
-5. UAT TEST: automatic deploy of the same binary to UAT server on PaaS (on OpenShift online) and runs tests. Send an email to Release user.
-6. PROD: Release user can do "push button" deploy (from Jenkins console - DeliveryPipeline tab) of the same binary to PROD server on PaaS (locally on OpenShift Enterprise). Automatic tests.
+5. QA TEST: automatic deploy of the same binary to QA server on PaaS (on OpenShift online) and runs tests. Send an email to Tester user.
+4. UAT TEST: Tester user can do "push button" deploy (from Jenkins console - DeliveryPipeline tab) of the same binary to UAT server on PaaS (on OpenShift online). Automatic tests. Send an email to Release user.
+6. PROD: Release user can do "push button" deploy (from Jenkins console - DeliveryPipeline tab) of the same binary to PROD server running on an on-premises PaaS (OpenShift Enterprise). Automatic tests.
 
 ![Delivery Pipeline](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/delivery-pipeline.png)
 

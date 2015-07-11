@@ -82,8 +82,7 @@ The delivery pipeline in this demo is divided into six phases each containing a 
 
 VIDEO 
 ============
-There is a recorded video available on here demonstrating the demo in action.
-![VIDEO](https://bluejeans.com/s/8p07/)
+There is a recorded video available demonstrating the demo in action.[VIDEO](https://bluejeans.com/s/8p07/)
 
 Instructions
 ============

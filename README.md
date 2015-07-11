@@ -80,6 +80,11 @@ The delivery pipeline in this demo is divided into six phases each containing a 
 
 ![Delivery Pipeline](https://raw.githubusercontent.com/amorena/democdonpaas/master/images/delivery-pipeline.png)
 
+VIDEO 
+============
+There is a recorded video available on here demonstrating the demo in action.
+![VIDEO](https://bluejeans.com/s/8p07/)
+
 Instructions
 ============
 
